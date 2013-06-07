@@ -1,0 +1,15 @@
+<div class="container">
+
+  <h3>Results:</h3>
+
+  Topic: <%= @deck_topic %><br>
+  Correct Guesses: <%= @num_correct %><br>
+  Incorrect Guesses: <%= @num_incorrect %><br>
+  Total Guesses: <%= @num_correct + @num_incorrect %><br>
+
+  <form action="/" method="get">
+    <input type="submit" value="Finish">
+  </form>
+
+</div>
+
