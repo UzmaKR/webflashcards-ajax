@@ -7,3 +7,12 @@
 th {
   text-align: left;
 }
+
+ul {
+  padding-left: 0px;
+  list-style: none;
+}
+
+ul li {
+  color: red;
+}

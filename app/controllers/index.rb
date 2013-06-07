@@ -1,3 +1,5 @@
+enable :sessions
+
 get '/' do
   # Look in app/views/index.erb
   erb :index
@@ -7,7 +9,7 @@ get '/play' do
   @card = Card.random
   @question = @card.front
   @answer = @card.back
-
+  session[:deck_id] = Deck.find_by_deck_id  
   erb :game
 end
 
@@ -22,6 +24,6 @@ post '/play' do
   @card = Card.random
   @question = @card.front
   @answer = @card.back
-  
+
   erb :game
 end
