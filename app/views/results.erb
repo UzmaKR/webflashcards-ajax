@@ -1,15 +1,24 @@
+
+
+<h3>Results:</h3>
+
+<% Round.all.reverse.each do |round| %>
+
 <div class="container">
 
-  <h3>Results:</h3>
+  
 
-  Topic: <%= @deck_topic %><br>
-  Correct Guesses: <%= @num_correct %><br>
-  Incorrect Guesses: <%= @num_incorrect %><br>
-  Total Guesses: <%= @num_correct + @num_incorrect %><br>
+  Topic: <%= round.deck.topic %><br>
+  Correct Guesses: <%= round.num_correct %><br>
+  Incorrect Guesses: <%= round.num_incorrect %><br>
+  Total Guesses: <%= round.num_correct + round.num_incorrect %><br>
 
-  <form action="/" method="get">
-    <input type="submit" value="Finish">
-  </form>
+
 
 </div>
 
+<% end %>
+
+<form action="/" method="get">
+  <input type="submit" value="Finish">
+</form>
