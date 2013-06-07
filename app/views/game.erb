@@ -1,11 +1,15 @@
 <div class="container">
 
   <%= @question %>
-  <h1>Hello</h1>
+  
 
   <form action="/play" method="post">
   Answer:<input type="text" name="guess">
+  <input type="hidden" name="answer" value="<%= @answer %>">
   </form> 
 
-
+  <%= @message %>
+  
 </div>
+
+
