@@ -1,13 +1,10 @@
 <div class="container">
   <h1>Welcome to Flashcrds!</h1>
-<!--
+
   <ul>
   <% Deck.all.each do |deck|%>
-    <li><a href="/deck/<% deck.deck_id %>"><%= deck %></a></li>
+    <li><a href="/deck/<%= deck.id %>"><%= deck.topic %></a></li>
+  <% end %>
   </ul>
--->
 
-  <div class="play_button">
-    <a href="/play">Play!</a>
-  </div>
 </div>

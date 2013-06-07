@@ -1,11 +1,11 @@
 <div class="container">
 
-  <%= @question %>
+  <%= @card.front %>
   
 
   <form action="/play" method="post">
   Answer:<input type="text" name="guess">
-  <input type="hidden" name="answer" value="<%= @answer %>">
+  <input type="hidden" name="answer" value="<%= @card.back %>">
   </form> 
 
   <ul>

@@ -9,7 +9,6 @@ get '/play' do
   @card = Card.random
   @question = @card.front
   @answer = @card.back
-  session[:deck_id] = Deck.find_by_deck_id  
   erb :game
 end
 
@@ -25,5 +24,13 @@ post '/play' do
   @question = @card.front
   @answer = @card.back
 
+  erb :game
+end
+
+get '/deck/:id' do
+  
+  p session[:id] = params[:id]
+   # = Deck.find(params[:id])
+  p @card = Deck.find(session[:id]).cards.sample
   erb :game
 end
