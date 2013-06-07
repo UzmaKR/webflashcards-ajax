@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   def self.authenticate(email, password)
     user = self.find_by_email(email)
+    return nil unless user
     fresh_encryption = Digest::SHA1.hexdigest("#{password}#{user.salt}")
     user.encrypted_password == fresh_encryption ? user : nil
   end

@@ -1,0 +1,11 @@
+<h1>Hello, <%= @user.name %></h1>
+<div>
+  <ul>
+    <li>Name: <%= @user.name %></li>
+    <li>E-Mail: <%= @user.email %></li>
+    <li><a href="#">Rounds</a></li>
+  </ul>
+  <form action="/user/logout" method="get">
+    <input type="submit" value="Log Out">
+  </form>
+</div>
