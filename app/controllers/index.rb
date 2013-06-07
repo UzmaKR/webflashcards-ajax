@@ -1,15 +1,9 @@
 enable :sessions
 
 get '/' do
+  session.clear if session[:id]
   # Look in app/views/index.erb
   erb :index
-end
-
-get '/play' do
-  @card = Card.random
-  @question = @card.front
-  @answer = @card.back
-  erb :game
 end
 
 post '/play' do
@@ -20,17 +14,14 @@ post '/play' do
   else
     @message = "You suck at this game! The answer is obviously #{answer}."
   end
-  @card = Card.random
-  @question = @card.front
-  @answer = @card.back
+  @card = Deck.find(session[:id]).cards.sample
 
   erb :game
 end
 
 get '/deck/:id' do
   
-  p session[:id] = params[:id]
-   # = Deck.find(params[:id])
-  p @card = Deck.find(session[:id]).cards.sample
+  session[:id] = params[:id]
+  @card = Deck.find(session[:id]).cards.sample
   erb :game
 end

@@ -6,11 +6,16 @@
   <form action="/play" method="post">
   Answer:<input type="text" name="guess">
   <input type="hidden" name="answer" value="<%= @card.back %>">
+   <input type="submit" value="Guess!!">
   </form> 
 
   <ul>
     <li><%= @message if @message %></li>
-  </ul>  
+  </ul>
+
+  <form action="/" method="get">
+    <input type="submit" value="Finish">
+  </form>
 </div>
 
 
