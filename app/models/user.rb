@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   validates :password, :length => { :in => 6..20 }, :confirmation => true
   validates :password_confirmation, :presence => true
 
+  has_many  :rounds
+
   attr_accessor :password
 
   before_create :encrypt_password

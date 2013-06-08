@@ -5,8 +5,9 @@ end
 post '/user/create' do
   @user = User.create(params)
   session[:user_id] = @user.id 
-  redirect "/user/#{session[:user_id]}"
+  redirect '/decks'
 end
+
 
 get '/user/login' do
   erb :user_login
@@ -16,7 +17,7 @@ post '/user/login' do
   user = User.authenticate(params[:email], params[:password])
   if user
     session[:user_id] = user.id
-    redirect "/user/#{user.id}"
+    redirect "/decks"
   else
     redirect "/"
   end
