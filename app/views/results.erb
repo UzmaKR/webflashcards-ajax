@@ -12,7 +12,7 @@
   Incorrect Guesses: <%= @round.num_incorrect %><br>
   Total Guesses: <%= @round.num_correct + @round.num_incorrect %><br>
 
- <%= "You Suck" unless @round.num_incorrect == 0 %>
+ <%= "You're good at this! Play again!" unless @round.num_incorrect == 0 %>
 
 </div>
 

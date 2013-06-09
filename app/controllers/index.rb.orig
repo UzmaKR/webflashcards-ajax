@@ -6,17 +6,15 @@ get '/' do
 end
 
 post '/play' do
-  p params
-  p session[:current_card]
   guess = params[:guess]
   answer = params[:answer]
   if guess == answer
     session[:num_correct] += 1
     session[:card_ids].delete(session[:current_card])
-    @message = "Correct! You are doing great !"
+    @message = "Correct!"
   else
     session[:num_incorrect] += 1
-    @message = "Incorrect! The answer is #{answer}."
+    @message = "You suck at this game! The answer is obviously #{answer}."
   end
 
   redirect '/results' if session[:card_ids].empty?
@@ -24,9 +22,7 @@ post '/play' do
   session[:current_card] = session[:card_ids].sample
   @card = Card.find(session[:current_card])
   
-  content_type :json
-  {message: @message, front: @card.front, back: @card.back}.to_json
-  # erb :game
+  erb :game
 end
 
 get '/decks' do

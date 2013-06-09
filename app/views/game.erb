@@ -1,16 +1,17 @@
 <div class="container">
 
-  <%= @card.front %>
+  <p id="new_front"><%= @card.front %></p>
   
 
   <form action="/play" method="post">
   Answer:<input type="text" name="guess">
-  <input type="hidden" name="answer" value="<%= @card.back %>">
-   <input type="submit" value="Guess!!">
+  <input id="card_answer" type="hidden" name="answer" value="<%= @card.back %>">
+  <input id="guessbutton" type="submit" value="Guess!!">
   </form> 
 
   <ul>
-    <li><%= @message if @message %></li>
+    <li id="server_answer"></li>
+       <!-- <%= @message if @message %></li> -->
   </ul>
 
   <form action="/results" method="get">
