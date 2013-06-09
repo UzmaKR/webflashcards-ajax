@@ -11,12 +11,18 @@
 
   <ul>
     <li id="server_answer"></li>
-       <!-- <%= @message if @message %></li> -->
   </ul>
 
   <form action="/results" method="get">
     <input type="submit" value="Finish">
   </form>
 </div>
+
+<section class="container2">
+    <div id="card" class="flipped">
+      <figure class="front"><%= @card.front %></figure>
+      <figure class="back"><%= @card.back %></figure>
+    </div>
+</section>
 
 

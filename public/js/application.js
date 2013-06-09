@@ -16,6 +16,7 @@ $(document).ready(function() {
         // console.log(response.front);
         // console.log(response.back);
         $('#server_answer').text(response.message);
+        $('#card').removeClass('flipped');
         window.setTimeout(function() {
           $('#card_answer').attr('value', response.back);
           $('#new_front').text(response.front);
