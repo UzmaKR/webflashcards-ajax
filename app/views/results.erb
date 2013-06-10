@@ -10,9 +10,9 @@
   Topic: <%= @round.deck.topic %><br>
   Correct Guesses: <%= @round.num_correct %><br>
   Incorrect Guesses: <%= @round.num_incorrect %><br>
-  Total Guesses: <%= @round.num_correct + @round.num_incorrect %><br>
+  Total Guesses: <%= @round.num_correct + @round.num_incorrect %><br></br>
 
- <%= "You're good at this! Play again!" unless @round.num_incorrect == 0 %>
+ <%= "Come back soon to play again!" unless @round.num_incorrect == 0 %>
 
 </div>
 

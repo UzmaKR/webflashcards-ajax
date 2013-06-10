@@ -24,6 +24,7 @@ post '/play' do
   session[:current_card] = session[:card_ids].sample
   @card = Card.find(session[:current_card])
   
+  #send answer, new card info to ajax
   content_type :json
   {message: @message, front: @card.front, back: @card.back}.to_json
   # erb :game

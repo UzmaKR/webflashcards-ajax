@@ -1,11 +1,22 @@
+<div class="user_info">
+<% if session[:user_id] %>
+  
+    <%= User.find(session[:user_id]).email %> logged </br></br>
+    <form action="/user/<%=session[:user_id]%>" method="get">
+      <input type="submit" value="User Profile">
+    </form>
+  <% end %>
+</div>
 <div class="container">
-  <h1>Welcome to Flashcards!</h1>
+  <h1>Welcome to Flashcards!</h1></br>
 
   <ul>
   <% Deck.all.each do |deck|%>
     <li><a href="/deck/<%= deck.id %>"><%= deck.topic %></a></li>
   <% end %>
   </ul>
+
+
 
 </div>
 
